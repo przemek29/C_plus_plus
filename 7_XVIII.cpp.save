@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+void  podzielString(char zrodlowa[], char parzysta[], char nieparzysta[]);
+
+int main()
+{
+  char napis[] = {"O to jest napis ktory sklada sie z wielu wyrazow"};
+  char parzyste[30];
+  char nieparzyste[30];
+
+}
+
+void podzielString(char zrodlowa[], char parzysta[], char nieparzysta[])
+{
+  bool parzystosc = false;
+  for (int i = 0; ; i++)
+  {
+    if (zrodlowa[i] == 0) break;
+    
+  }
+}

@@ -1,0 +1,18 @@
+#include <iostream>
+
+int main()
+{
+  int i, m;
+  int dlugosc_linii = 3;
+  for (i = 0; i < 4; i++)
+  {
+    for(m = 0; m < 10; m++)
+    {
+      std::cout << "*";
+      if (m > dlugosc_linii)
+	  break;
+    }
+    std::cout << "\n Kontynuujemy zewnętrzną pętle"
+  	      << "for dla i =" << i << "\n";
+  }
+}

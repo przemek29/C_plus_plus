@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  int ti[6];
+  double td[6];
+
+  int *wi;
+  double *wd;
+
+  wi = &ti[0];
+  wd = &td[0];
+
+  cout << "oto jak przy inkrementacji wskazników zmieniają się ich adresy:\n";
+
+  for(i = 0; i < 6; i++
+)
+}
