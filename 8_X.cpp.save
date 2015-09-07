@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  int *ptrInt;
+  int address = 0xa2ff4;
+
+  ptrInt = 
+  ptrInt = null;
+}
