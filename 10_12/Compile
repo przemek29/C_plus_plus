@@ -1,0 +1,1 @@
+g++ first.cpp second.cpp ticket.cpp person.cpp -o test
