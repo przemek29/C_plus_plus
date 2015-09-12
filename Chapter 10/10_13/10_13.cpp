@@ -2,7 +2,7 @@
 using namespace std;
 #include "person.h"
 
-void presentation(person);
+void presentation(person &someone);
 
 int main()
 {
@@ -15,7 +15,7 @@ int main()
     presentation(author);
 }
 
-void presentation(person someone)
+void presentation(person &someone)
 {
     cout << "I have the honor to present you, \nHere in person: ";
     someone.print();
