@@ -41,7 +41,7 @@ class ClockModule
 	    cout << name << " : " << myCurrentTime / 1000.0 << " s ";
 	}
 
-	void synchronizeWith(const ClockModule *ptr)
+	void synchronise(const ClockModule *ptr)
 	{
 	    long referenceTime = ptr->enterMilliseconds();
 	    if (myCurrentTime != referenceTime)
@@ -64,9 +64,9 @@ class ClockModule
 
 int main()
 {
-    ClockModule gamma("Gamma", 4000);
+    ClockModule gamma("GAMMA", 4000);
     ClockModule separ(" SEPAR", 5010);
-    ClockModule alfap("Alfafab", 9200);
+    ClockModule alfap("   ALFAP", 9200);
 
     cout << "Check the accurancy of clocks\n";
 
@@ -81,7 +81,7 @@ int main()
 	{
 	    gamma.printTime();
 	    separ.printTime();
-	    alfap.PrintTime();
+	    alfap.printTime();
 	    cout << endl;
 	}
 
@@ -91,4 +91,33 @@ int main()
 
     cout << "As you can see the clocks run unevenly, and the differences they will now magnified\n";
 
-    cout
+    cout << "Input of the reference object===\n";
+
+    const ClockModule gold("GOLD", 9999999);
+
+    while(true)
+    {
+	gamma.passesMillisecond();
+	separ.passesMillisecond();
+	alfap.passesMillisecond();
+
+	gold.passesMillisecond();
+
+	if(!(gold.enterMilliseconds() % 1000))
+	{
+	    gamma.synchronise(&gold);
+	    separ.synchronise(&gold);
+	    alfap.synchronise(&gold);
+	}
+
+	if(gold.enterMilliseconds() / 1000.0 >= 600)
+	{
+	    cout << "Summary after 600 seconds...\n";
+	    gamma.printTime();
+	    separ.printTime();
+	    alfap.printTime();
+	    cout << endl;
+	    break;
+	}
+    }
+}
